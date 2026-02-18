@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pink Snake Adventure ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="score-container">
+        <div>Score: <span id="score">0</span></div>
+        <div id="high-score-wrap">Best: <span id="highScore">0</span></div>
+    </div>
+    
+    <div id="game-container">
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        
+        <div id="game-over">
+            <h1>Game Over! ✨</h1>
+            <button id="retry-btn">Try Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
