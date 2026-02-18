@@ -1,10 +1,11 @@
+/* Prevent scrolling and set the aesthetic background */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  touch-action: none;
+  overflow: hidden; /* Stops the page from bouncing */
+  touch-action: none; /* Disables default browser gestures */
   background: linear-gradient(135deg, #fff5f7 0%, #fce4ec 100%);
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@ html, body {
 #score-container {
   display: flex;
   gap: 30px;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
   color: #f06292;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -25,6 +26,7 @@ html, body {
 
 #game-container {
   position: relative;
+  /* Makes the board fill 90% of the phone screen width */
   width: 90vw; 
   height: 90vw;
   max-width: 400px;
@@ -38,8 +40,9 @@ html, body {
 #gameCanvas {
   width: 100%;
   height: 100%;
-  background-color: #fff; /* Changed back to white */
-  border-radius: 15px;
+  background-color: #1a1a1a; /* Dark 'dance floor' background */
+  background-image: radial-gradient(circle, #333 1px, transparent 1px);
+  background-size: 20px 20px; /* Subtle grid pattern */
 }
 
 #game-over {
@@ -49,16 +52,17 @@ html, body {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.9);
-  display: none;
+  display: none; /* Hidden until didGameEnd() is true */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
+  z-index: 10;
 }
 
 #game-over h1 {
   color: #d81b60;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
 }
 
@@ -71,4 +75,10 @@ html, body {
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(240, 98, 146, 0.4);
+  z-index: 100; /* Keeps button on top */
+  pointer-events: auto; /* Ensures it is clickable on mobile */
+}
+
+#retry-btn:active {
+  transform: scale(0.95);
 }
